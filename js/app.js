@@ -98,7 +98,7 @@ function go_search(){
 	}
 }
 
-function lucky(){
+function fiery(){
 	window.location = "http://www.google.com/search?hl=en&source=hp&btnI&q="+$("#qs").val();
 }
 
@@ -316,7 +316,7 @@ function get_videos(start){
 		$("#res_yt").css({"opacity":"0.4"});
 	}
 	if(no_get==0){
-	gurl = "http://gdata.youtube.com/feeds/api/videos?alt=jsonc&v=2&lr=en&orderby=viewCount&max-results=20&hl="+loc+"&q="+query;
+	gurl = "http://gdata.youtube.com/feeds/api/videos?alt=jsonc&v=2&lr=en&orderby=viewCount&hl="+loc+"&q="+query;
 	gurl = gurl + "&start-index=" + 2*start + 1;
 	
 	no_get = 1;
@@ -345,7 +345,7 @@ function get_videos(start){
 					$("#res_yt").show();
 					$("#query").html(query);
 					$("#count").html(number_format(response.data.totalItems));
-					$("#speed").html('~0.2');
+					$("#speed").html('');
 					$("#info").show();
 					$(".tabs").show();
 				}
@@ -364,6 +364,7 @@ function get_videos(start){
 	});
 	}
 }
+
 
 $(window).scroll(function(){
     if($(window).scrollTop() >= $(document).height() - $(window).height() - 200 && ls==0){
